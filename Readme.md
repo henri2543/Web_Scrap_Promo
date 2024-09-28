@@ -1,0 +1,1 @@
+Projeto destinado à raspagem de promoções da web.
