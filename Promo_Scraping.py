@@ -3,6 +3,7 @@ import time
 import json
 import requests
 import pandas as pd
+from PIL import Image, ImageDraw, ImageFont
 
 # Replace `path to the .json file` with the actual file path
 json_file_path = r".secrets\credentials.json"
