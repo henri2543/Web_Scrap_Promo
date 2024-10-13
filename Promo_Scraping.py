@@ -4,9 +4,15 @@ import json
 import requests
 import pandas as pd
 
-# Defina suas credenciais e segredo
-app_id = "SUA CHAVE AQUI"  # Substitua pelo seu AppId
-secret = "SUA SECRET AQUI"    # Substitua pelo seu Secret
+# Replace `path to the .json file` with the actual file path
+json_file_path = r".secrets\credentials.json"
+
+with open(json_file_path, "r") as f:
+    credentials = json.load(f)
+
+# To access the username and password
+app_id = credentials["AppID"]
+secret = credentials["Secret"]
 
 df_final = pd.DataFrame()
 
@@ -124,4 +130,4 @@ print(selected_products)
 
 # Exibir os produtos selecionados
 selected_products_list = selected_products[['productName', 'commissionRate', 'sales', 'priceDiscountRate', 'price', 'offerLink','imageUrl']]
-selected_products_list.to_csv(r'\Web_Scrap_Promo\Resumo_Promos.csv',index=False)
+selected_products_list.to_csv(r'Resumo_Promos.csv',index=False)
